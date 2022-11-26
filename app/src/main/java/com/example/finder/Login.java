@@ -81,6 +81,13 @@ public class Login extends AppCompatActivity implements View.OnClickListener {
             return;
         }
 
+        if (contra.length()<6) {
+            contraseña.setError("La contraseña debe tener 6 carácteres como mínimo");
+            contraseña.requestFocus();
+            return;
+        }
+
+
        mAuth.signInWithEmailAndPassword(emmail, contra).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
            @Override
            public void onComplete(@NonNull Task<AuthResult> task) {

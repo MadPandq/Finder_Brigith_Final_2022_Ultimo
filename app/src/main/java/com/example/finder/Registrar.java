@@ -101,6 +101,12 @@ public class Registrar extends AppCompatActivity implements View.OnClickListener
                 return;
             }
 
+            if (contraseña.length()<6) {
+                contraRegis.setError("La contraseña debe tener 6 carácteres como mínimo");
+                contraRegis.requestFocus();
+            return;
+            }
+
             if(rut.isEmpty()){
                 rutRegis.setError("Es necesario ingresar un rut");
                 rutRegis.requestFocus();
